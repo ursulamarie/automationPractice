@@ -1,0 +1,34 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="RegistrationTestSuiteNegative" verbose="1">
+
+    <test name="InvalidEmail">
+        <parameter name="emailAddress" value="invalidEmail@"></parameter>
+        <parameter name="expectedErrorMessage"
+                   value="Invalid email address."></parameter>
+        <classes>
+            <class name="com.automationpractice.registrationTests.NegativeRegistrationTests">
+            </class>
+        </classes>
+    </test>
+
+    <test name="NoEmail">
+        <parameter name="emailAddress" value=""></parameter>
+        <parameter name="expectedErrorMessage"
+                   value="Invalid email address."></parameter>
+        <classes>
+            <class name="com.automationpractice.registrationTests.NegativeRegistrationTests">
+            </class>
+        </classes>
+    </test>
+
+    <test name="ExistingEmail">
+        <parameter name="emailAddress" value="rersr@hfssk.com"></parameter>
+        <parameter name="expectedErrorMessage"
+                   value="An account using this email address has already been registered. Please enter a valid password or request a new one."></parameter>
+        <classes>
+            <class name="com.automationpractice.registrationTests.NegativeRegistrationTests">
+            </class>
+        </classes>
+    </test>
+</suite>
